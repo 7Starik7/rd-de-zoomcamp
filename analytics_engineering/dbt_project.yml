@@ -2,7 +2,8 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'taxi_rides_nyc'
+name: 'analytics_engineering'
+
 version: '1.0.0'
 config-version: 2
 
@@ -36,6 +37,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  taxi_rides_nyc:
-    # Applies to all files under models/example/
+  analytics_engineering:
     
+vars:
+  payment_type_values: [1, 2, 3, 4, 5, 6]

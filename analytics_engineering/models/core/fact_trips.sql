@@ -10,9 +10,9 @@ with green_taxi_tripdata as (
     from {{ref('stg_green_taxi_tripdata')}}
 ),
 
- yellow_taxi_tripdata as (
+yellow_taxi_tripdata as (
     select *,
-    'yellow' as service_type
+    'Yellow' as service_type
     from {{ref('stg_yellow_taxi_tripdata')}}
 ),
 
@@ -59,6 +59,6 @@ trips_unioned.tripid,
     -- trips_unioned.payment_type_description
 from trips_unioned
 inner join dim_zones as pickup_zone
-on trips_unioned.pickup_locationid=dropoff_zone.locationid
+on trips_unioned.pickup_locationid=pickup_zone.locationid
 inner join dim_zones as dropoff_zone
 on trips_unioned.dropoff_locationid=dropoff_zone.locationid
